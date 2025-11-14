@@ -1,0 +1,29 @@
+@use "../../styles/base/variables" as *;
+
+.top-bar {
+  background-color: $primary-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  height: 56px;
+}
+
+.top-bar-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 23px;
+  padding: 10px 20px;
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  img {
+    width: 16px;
+  }
+}

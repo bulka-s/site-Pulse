@@ -1,0 +1,57 @@
+@use "../../styles/base/variables" as *;
+
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  padding: 23px 0;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header-container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 34px;
+
+  li {
+    font-size: 16px;
+    color: black;
+
+    a {
+      text-decoration: none;
+      color: black;
+      position: relative;
+      padding: 3px 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $primary-color;
+        transition: width 0.2s ease;
+      }
+
+      &:hover {
+        color: $primary-color;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
