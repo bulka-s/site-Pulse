@@ -4,19 +4,19 @@ import InfoBlock from "../Info/InfoBlock";
 function Info() {
   const infoData = [
     {
-      icon: "path/to/icon1.png",
+      icon: "/info/shield.svg",
       title: "Доверик",
       description:
         "На этом принципе построены все наши действия. Наша цель — укреплять доверие ежедневно через честную и качественную работу.",
     },
     {
-      icon: "path/to/icon2.png",
+      icon: "/info/award.svg",
       title: "Надежность",
       description:
         "Надёжность достигается благодаря высокому уровню исполнения и одинаковому вниманию ко всем нашим клиентам.",
     },
     {
-      icon: "path/to/icon3.png",
+      icon: "/info/scale.svg",
       title: "Этика",
       description:
         "Основополагающий принцип, основанный на наших ценностях. Определяет правила обработки информации и взаимодействия с клиентами.",
@@ -26,7 +26,6 @@ function Info() {
   return (
     <section className="info">
       <div className="info-container">
-        <div className="info-block">
           {infoData.map((item, index) => (
             <InfoBlock
               key={index}
@@ -35,7 +34,6 @@ function Info() {
               description={item.description}
             />
           ))}
-        </div>
       </div>
     </section>
   );

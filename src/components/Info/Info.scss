@@ -6,9 +6,42 @@
   padding: 80px 0;
   display: flex;
   justify-content: center;
+  margin-bottom: 120px;
 }
 
 .info-container {
   width: 100%;
   max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 23px;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  background: $primary-color;
+  padding: 24px;
+  border-radius: 11px;
+  color: white;
+
+  & img {
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 14px;
+  }
+
+  & h4 {
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  & p {
+    line-height: 1.5;
+  }
 }

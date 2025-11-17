@@ -3,6 +3,8 @@ import TopBar from "./components/TopBar/TopBar";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Info from "./components/Info/Info";
+import AboutUs from "./components/About/AboutUs";
+import Services from "./components/Services/Services";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Header />
       <Hero />
       <Info />
+      <AboutUs />
+      <Services />
     </>
   );
 }
