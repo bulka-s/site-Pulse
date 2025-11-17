@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 120px;
 }
 
 .services-container {
@@ -12,6 +13,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
+  gap: 20px;
 }
 
 .services-cards {
@@ -21,13 +24,17 @@
 }
 
 .service-card {
+  text-align: left;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: left;
-  gap: 24px;
+  gap: 18px;
   border: #e1e1e1 1px solid;
   border-radius: 11px;
   padding: 26px;
+  transition: 0.3s;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
 
   img {
     max-height: 58px;
@@ -36,5 +43,10 @@
     background-color: #f3f4f6;
     box-sizing: border-box;
     border-radius: 7px;
+  }
+
+  &:hover {
+    transform: translate(0, -10px);
+    box-shadow: 0px 7px 17px -7px rgba(0, 0, 0, 0.25);
   }
 }

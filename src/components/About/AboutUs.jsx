@@ -2,7 +2,7 @@ import "./AboutUs.scss";
 
 function AboutUs() {
   return (
-    <div className="about-us">
+    <div className="about-us" id="about">
       <div className="about-us-container">
         <h2 className="h1">O Pulse Marketing</h2>
         <p className="p2">
