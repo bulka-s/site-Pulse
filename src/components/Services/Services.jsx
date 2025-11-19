@@ -4,7 +4,7 @@ import { servicesData } from "../../data/services";
 
 function Services() {
   return (
-    <div className="services">
+    <div className="services" id="services">
       <div className="services-container">
         <h2>Услуги</h2>
         <p className="p3">Познакомьтесь с нашим портфолио услуг</p>

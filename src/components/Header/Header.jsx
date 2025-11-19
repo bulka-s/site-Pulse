@@ -38,10 +38,12 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#">Услуги</a>
+            <a href="#services" onClick={(e) => handleNavClick(e, "services")}>
+              Услуги
+            </a>
           </li>
           <li>
-            <a href="#">Портфолио</a>
+            <a href="#portfolio">Портфолио</a>
           </li>
           <li>
             <a href="#">Контакты</a>
