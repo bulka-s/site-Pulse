@@ -9,6 +9,8 @@ import Steps from "./components/Steps/Steps";
 import WhyChoose from "./components/WhyChoose/WhyChoose";
 import Team from "./components/Team/Team";
 import Feedback from "./components/Feedback/Feedback";
+import ContactForm from "./components/ContactForm/ContactForm";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <WhyChoose />
       <Team />
       <Feedback />
+      <ContactForm />
+      <Footer />
     </>
   );
 }
