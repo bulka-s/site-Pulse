@@ -7,15 +7,17 @@ function WhyChoose() {
     <div className="why-choose">
       <div className="why-choose-container">
         <h2>ПОЧЕМУ ВЫБИРАЮТ ИМЕННО НАС</h2>
-        {statsData.map((stat) => (
-          <WhyChooseCard
-            title={stat.title}
-            description={stat.description}
-            value={stat.value}
-            label={stat.label}
-            icon={stat.icon}
-          />
-        ))}
+        <div className="why-choose-grid">
+          {statsData.map((stat) => (
+            <WhyChooseCard
+              title={stat.title}
+              description={stat.description}
+              value={stat.value}
+              label={stat.label}
+              icon={stat.icon}
+            />
+          ))}
+        </div>
       </div>
       <div className="why-bottom">
         <h3>Готовы вывести ваш бренд на новый уровень?</h3>
