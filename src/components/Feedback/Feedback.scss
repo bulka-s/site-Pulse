@@ -1,0 +1,242 @@
+@use "../../styles/base/variables" as *;
+
+.feedback {
+  text-align: center;
+  padding: 80px 0 120px;
+  background-color: #f8f9fa;
+}
+
+.feedback-slider {
+  position: relative;
+  max-width: 980px;
+  margin: 40px auto 0;
+  min-height: 360px;
+}
+
+.feedback-card {
+  background: linear-gradient(135deg, #0f4c75 0%, #1e6fa3 50%, #2b87c6 100%);
+  color: white;
+  padding: 60px 80px 90px;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(13, 42, 78, 0.2);
+  position: relative;
+  overflow: visible;
+}
+
+/* Content wrapper inside the card — animations apply here only */
+.feedback-content {
+  position: relative;
+}
+
+.feedback-content {
+  position: relative;
+  opacity: 1;
+  transform: none;
+}
+
+/* Outgoing / incoming animations separated by direction */
+.feedback-content.out.next {
+  animation: outNext 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.feedback-content.in.next {
+  animation: inNext 360ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.feedback-content.out.prev {
+  animation: outPrev 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.feedback-content.in.prev {
+  animation: inPrev 360ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.feedback-text {
+  font-size: 20px;
+  line-height: 1.8;
+  margin: 18px auto 24px;
+  font-style: normal;
+  max-width: 780px;
+  text-align: center;
+}
+
+.feedback-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 18px rgba(2, 19, 40, 0.2);
+    margin-bottom: 14px;
+    background: #fff;
+  }
+
+  strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+  }
+}
+
+.feedback-rating {
+  color: #ffd24d;
+  font-size: 20px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.card-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.indicator {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &.active {
+      width: 28px;
+      height: 6px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.95);
+    }
+  }
+}
+
+.slider-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(2, 19, 40, 0.18);
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.03);
+  }
+}
+
+/* Outgoing / Incoming keyframes */
+@keyframes outNext {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+}
+
+@keyframes inNext {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes outPrev {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes inPrev {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Decorative quote mark */
+.feedback-card .quote {
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  font-size: 72px;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+}
+
+/* Position rating at top center */
+.feedback-card .feedback-rating {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Place avatar overlapping bottom of card */
+.feedback-card .feedback-author {
+  position: relative;
+  z-index: 2;
+}
+
+.feedback-card .avatar {
+  margin-top: 8px;
+}
+
+/* Make sure slider area leaves space for buttons/dots */
+.feedback-slider {
+  padding-bottom: 80px;
+}
