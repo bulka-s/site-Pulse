@@ -32,50 +32,47 @@ function ContactForm() {
 
       <form className="contact-form__form" onSubmit={handleSubmit} noValidate>
         <div className="field">
-          <label className="field__label" htmlFor="name">
-            ФИО
-          </label>
           <input
             id="name"
             name="name"
             className="field__input"
             type="text"
-            placeholder="Имя"
             value={form.name}
             onChange={handleChange}
             required
           />
+          <label className="field__label" htmlFor="name">
+            ФИО
+          </label>
         </div>
 
         <div className="field">
-          <label className="field__label" htmlFor="email">
-            E-mail
-          </label>
           <input
             id="email"
             name="email"
             className="field__input"
             type="email"
-            placeholder="E-mail"
             value={form.email}
             onChange={handleChange}
             required
           />
+          <label className="field__label" htmlFor="email">
+            E-mail
+          </label>
         </div>
 
         <div className="field">
-          <label className="field__label" htmlFor="phone">
-            Телефон
-          </label>
           <input
             id="phone"
             name="phone"
             className="field__input"
             type="tel"
-            placeholder="Телефон"
             value={form.phone}
             onChange={handleChange}
           />
+          <label className="field__label" htmlFor="phone">
+            Телефон
+          </label>
         </div>
 
         <div className="field field--textarea">
@@ -86,7 +83,6 @@ function ContactForm() {
             id="message"
             name="message"
             className="field__input field__textarea"
-            placeholder="Сообщение"
             value={form.message}
             onChange={handleChange}
             rows={6}

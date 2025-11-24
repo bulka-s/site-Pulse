@@ -4,25 +4,25 @@ import "./Feedback.scss";
 const feedbackData = [
   {
     id: 1,
-    name: "Анна Петрова",
-    company: "TechCorp",
-    text: "Отличная работа! Проект был завершен вовремя и превзошел все ожидания.",
+    name: "Анна Косте",
+    company: "Генеральный директор • Glamour Boutique",
+    text: "«Работа по фото и созданию контента просто безупречная. Pulse подняли визуальный уровень нашего бренда на новый уровень. Мы очень довольны!»",
     rating: 5,
     avatar: "https://i.pravatar.cc/120?img=47",
   },
   {
     id: 2,
     name: "Дмитрий Иванов",
-    company: "StartUp Inc",
-    text: "Профессиональный подход и креативные решения. Рекомендую!",
+    company: "Генеральный директор • TechStart Innovations",
+    text: "Работать с командой Pulse было потрясающе. Они прекрасно поняли наше видение и создали визуальную идентичность, которая отражает то, что мы есть.",
     rating: 5,
     avatar: "https://i.pravatar.cc/120?img=12",
   },
   {
     id: 3,
     name: "Елена Смирнова",
-    company: "Global Business",
-    text: "Результат превзошел ожидания. Будем сотрудничать снова.",
+    company: "Директор по маркетингу • Академия фитнеса",
+    text: "Кампания в социальных сетях, разработанная Pulse, удвоила нашу вовлеченность всего за 3 месяца. Чрезвычайно преданные и творческие профессионалы!",
     rating: 4,
     avatar: "https://i.pravatar.cc/120?img=32",
   },
@@ -73,18 +73,21 @@ function Feedback() {
 
   return (
     <div className="feedback">
+      <img className="quota-livit" src="/team/quote.svg" alt="" />
+
       <h2>Отзывы клиентов</h2>
       <p className="p2">Реальные истории трансформации и успеха</p>
 
       <div className="feedback-slider">
         <div className="feedback-card">
+          <div className="quote">
+            <img src="/team/quote.svg" alt="" />
+          </div>
           <div
             className={`feedback-content ${
               animStage ? animStage : ""
             } ${direction}`}
           >
-            <div className="quote">“</div>
-
             <div className="feedback-rating">
               {"★".repeat(currentFeedback.rating)}
             </div>
@@ -110,10 +113,6 @@ function Feedback() {
             >
               ‹
             </button>
-
-            <div className="indicator">
-              {currentSlide + 1} / {feedbackData.length}
-            </div>
 
             <button
               className="slider-btn next"

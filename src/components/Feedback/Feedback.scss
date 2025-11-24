@@ -2,8 +2,9 @@
 
 .feedback {
   text-align: center;
-  padding: 80px 0 120px;
-  background-color: #f8f9fa;
+  position: relative;
+  // background-color: #f8f9fa;
+  margin-bottom: 170px;
 }
 
 .feedback-slider {
@@ -14,27 +15,27 @@
 }
 
 .feedback-card {
-  background: linear-gradient(135deg, #0f4c75 0%, #1e6fa3 50%, #2b87c6 100%);
+  background: linear-gradient(135deg, #072f51 0%, $primary-color 100%);
   color: white;
-  padding: 60px 80px 90px;
+  padding: 55px;
   border-radius: 28px;
   box-shadow: 0 20px 60px rgba(13, 42, 78, 0.2);
   position: relative;
   overflow: visible;
-}
-
-/* Content wrapper inside the card — animations apply here only */
-.feedback-content {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .feedback-content {
   position: relative;
   opacity: 1;
   transform: none;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Outgoing / incoming animations separated by direction */
 .feedback-content.out.next {
   animation: outNext 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
@@ -100,10 +101,10 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
-  position: absolute;
+  // position: absolute;
   bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  // left: 50%;
+  // transform: translateX(-50%);
   z-index: 3;
 }
 
@@ -113,15 +114,25 @@
   font-size: 14px;
 }
 
+.quota-livit {
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  height: 365px;
+  transform: translate(-50%, -50%);
+  /* z-index: 1; */
+  opacity: 0.2;
+}
+
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 18px;
-  position: absolute;
+  // margin-top: 18px;
+  // position: absolute;
   bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  // left: 50%;
+  // transform: translateX(-50%);
   z-index: 2;
 
   .dot {
@@ -216,14 +227,6 @@
   font-size: 72px;
   color: rgba(255, 255, 255, 0.12);
   line-height: 1;
-}
-
-/* Position rating at top center */
-.feedback-card .feedback-rating {
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* Place avatar overlapping bottom of card */
