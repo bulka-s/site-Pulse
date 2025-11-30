@@ -84,3 +84,23 @@
   border-radius: 16px;
   background: linear-gradient(165deg, #0a3357, $primary-color);
 }
+
+@media (max-width: 900px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-choose-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-bottom {
+    padding: 28px 12px;
+  }
+}

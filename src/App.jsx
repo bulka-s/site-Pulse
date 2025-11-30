@@ -11,6 +11,7 @@ import Team from "./components/Team/Team";
 import Feedback from "./components/Feedback/Feedback";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Footer from "./components/Footer/Footer";
+import "./styles/overrides.scss";
 
 function App() {
   return (

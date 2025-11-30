@@ -39,12 +39,15 @@
 .feedback-content.out.next {
   animation: outNext 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
 .feedback-content.in.next {
   animation: inNext 360ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
 .feedback-content.out.prev {
   animation: outPrev 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
 .feedback-content.in.prev {
   animation: inPrev 360ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
@@ -180,6 +183,7 @@
     opacity: 1;
     transform: translateX(0);
   }
+
   to {
     opacity: 0;
     transform: translateX(-24px);
@@ -191,6 +195,7 @@
     opacity: 0;
     transform: translateX(24px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -202,6 +207,7 @@
     opacity: 1;
     transform: translateX(0);
   }
+
   to {
     opacity: 0;
     transform: translateX(24px);
@@ -213,6 +219,7 @@
     opacity: 0;
     transform: translateX(-24px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -242,4 +249,57 @@
 /* Make sure slider area leaves space for buttons/dots */
 .feedback-slider {
   padding-bottom: 80px;
+}
+
+@media (max-width: 900px) {
+  .feedback-slider {
+    max-width: 760px;
+    min-height: 300px;
+  }
+
+  .feedback-card {
+    padding: 36px;
+    border-radius: 20px;
+  }
+
+  .feedback-text {
+    font-size: 18px;
+    max-width: 640px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .slider-dots {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .feedback-slider {
+    max-width: 100%;
+    padding: 0 12px 60px;
+    min-height: 260px;
+  }
+
+  .feedback-card {
+    padding: 24px;
+    border-radius: 14px;
+  }
+
+  .feedback-text {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .card-controls {
+    gap: 12px;
+  }
 }

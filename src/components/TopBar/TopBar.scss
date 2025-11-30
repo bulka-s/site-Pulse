@@ -27,3 +27,18 @@
     width: 16px;
   }
 }
+
+@media (max-width: 640px) {
+  .top-bar {
+    height: 48px;
+  }
+
+  .top-bar-content {
+    padding: 8px 12px;
+    gap: 12px;
+  }
+
+  .top-bar-item {
+    gap: 8px;
+  }
+}
