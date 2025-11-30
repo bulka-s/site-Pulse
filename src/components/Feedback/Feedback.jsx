@@ -45,15 +45,12 @@ function Feedback() {
   const handleChange = (index, dir = "next") => {
     if (index === currentSlide) return;
     setDirection(dir);
-    // outgoing animation
     setAnimStage("out");
 
-    // after outgoing, swap content and play incoming
     setTimeout(() => {
       setCurrentSlide(index);
       setAnimStage("in");
 
-      // clear stage after incoming animation
       setTimeout(() => setAnimStage(""), 380);
     }, 320);
   };
@@ -72,7 +69,7 @@ function Feedback() {
   const currentFeedback = feedbackData[currentSlide];
 
   return (
-    <div className="feedback">
+    <div id="feedback" className="feedback">
       <img className="quota-livit" src="/team/quote.svg" alt="" />
 
       <h2>Отзывы клиентов</h2>
@@ -84,9 +81,8 @@ function Feedback() {
             <img src="/team/quote.svg" alt="" />
           </div>
           <div
-            className={`feedback-content ${
-              animStage ? animStage : ""
-            } ${direction}`}
+            className={`feedback-content ${animStage ? animStage : ""
+              } ${direction}`}
           >
             <div className="feedback-rating">
               {"★".repeat(currentFeedback.rating)}

@@ -6,10 +6,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div className="footer-col footer-col--about">
-          <div className="logo">
-            <div className="logo__mark">Pulse</div>
-            <div className="logo__text">Marketing</div>
-          </div>
+          <img src="/logo-white.svg" alt="" />
           <p className="footer-desc">
             Мы задаём ритм вашей марке и создаём импульсы роста для вашего бизнеса.
           </p>
@@ -19,11 +16,11 @@ function Footer() {
           <h4>Контакты</h4>
           <ul className="contacts-list">
             <li>
-              <span className="icon">📞</span>
+              <img src="/footer/phone.svg" alt="" height={16} />
               <a href="tel:+79991234567">+7 (999) 123-45-67</a>
             </li>
             <li>
-              <span className="icon">✉️</span>
+              <img src="/footer/mail.svg" alt="" height={16} />
               <a href="mailto:info@pulsemarketing.ru">info@pulsemarketing.ru</a>
             </li>
           </ul>

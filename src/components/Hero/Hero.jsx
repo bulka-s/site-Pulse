@@ -1,6 +1,13 @@
 import "./Hero.scss";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
 
 function Hero() {
+  const scrollToSection = useSmoothScroll();
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
   return (
     <section className="hero" id="main">
       <div className="hero-black"></div>
@@ -19,7 +26,7 @@ function Hero() {
           <br />
           надежность и этика.
         </p>
-        <button className="hero-button p1">Связяться с нами</button>
+        <button className="hero-button p1" onClick={(e) => handleNavClick(e, "form")}>Связяться с нами</button>
       </div>
     </section>
   );

@@ -43,13 +43,16 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#portfolio">Портфолио</a>
+            <a href="#process" onClick={(e) => handleNavClick(e, "process")}>Процесс</a>
           </li>
           <li>
-            <a href="#">Контакты</a>
+            <a href="#why" onClick={(e) => handleNavClick(e, "why")}>Преимущества</a>
           </li>
           <li>
-            <a href="#">Команда</a>
+            <a href="#team" onClick={(e) => handleNavClick(e, "team")}>Команда</a>
+          </li>
+          <li>
+            <a href="#feedback" onClick={(e) => handleNavClick(e, "feedback")}>Отзывы</a>
           </li>
         </ul>
       </div>

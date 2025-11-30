@@ -27,7 +27,7 @@ function ContactForm() {
   }
 
   return (
-    <section className="contact-form">
+    <section id="form" className="contact-form">
       <h3 className="contact-form__title">Форма обратной связи</h3>
 
       <form className="contact-form__form" onSubmit={handleSubmit} noValidate>

@@ -5,7 +5,7 @@ import { statsData } from "../../data/why_choose";
 function WhyChoose() {
   return (
     <div className="why-choose">
-      <div className="why-choose-container">
+      <div id="why" className="why-choose-container">
         <h2 style={{ textAlign: "center" }}>ПОЧЕМУ ВЫБИРАЮТ ИМЕННО НАС</h2>
         <div className="why-choose-grid">
           {statsData.map((stat) => (
