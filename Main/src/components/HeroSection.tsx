@@ -2,9 +2,16 @@ import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-export default function HeroSection({ onCTAClick }: { onCTAClick: () => void }) {
+export default function HeroSection({
+  onCTAClick,
+}: {
+  onCTAClick: () => void;
+}) {
   return (
-    <section id="inicio" className="relative h-[600px] flex items-center overflow-hidden">
+    <section
+      id="inicio"
+      className="relative h-[600px] flex items-center overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0">
         <ImageWithFallback
@@ -32,7 +39,9 @@ export default function HeroSection({ onCTAClick }: { onCTAClick: () => void }) 
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <strong>Pulse Marketing</strong> предлагает клиентам индивидуальный подход для каждого сегмента бизнеса, основанный на трех ключевых принципах: доверие, надежность и этика.
+            <strong>Pulse Marketing</strong> предлагает клиентам индивидуальный
+            подход для каждого сегмента бизнеса, основанный на трех ключевых
+            принципах: доверие, надежность и этика.
           </motion.p>
 
           <motion.div

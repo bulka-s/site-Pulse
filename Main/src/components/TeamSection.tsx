@@ -8,7 +8,8 @@ const teamMembers = [
   {
     name: "Анна Силина",
     role: "Креативный директор",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
     bio: "15+ лет в брендинге и стратегическом дизайне",
     linkedin: "#",
     email: "anna@pulsemarketing.ru",
@@ -16,7 +17,8 @@ const teamMembers = [
   {
     name: "Карл Менделеев",
     role: "Руководитель Digital-маркетинга",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
     bio: "Специалист по цифровым кампаниям и performance",
     linkedin: "#",
     email: "karl@pulsemarketing.ru",
@@ -24,7 +26,8 @@ const teamMembers = [
   {
     name: "Марина Костина",
     role: "Менеджер социальных медиа",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
     bio: "Эксперт по вовлечению и построению сообществ",
     linkedin: "#",
     email: "marina@pulsemarketing.ru",
@@ -32,7 +35,8 @@ const teamMembers = [
   {
     name: "Пётр Сантос",
     role: "Директор по продакшну",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
     bio: "Аудиовизуальное производство и режиссура фотографии",
     linkedin: "#",
     email: "petr@pulsemarketing.ru",
@@ -54,7 +58,8 @@ export default function TeamSection() {
         >
           <h2 className="text-4xl text-[#2C3E50] mb-4">НАША КОМАНДА</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Профессионалы, увлечённые созданием невероятного опыта для вашего бренда
+            Профессионалы, увлечённые созданием невероятного опыта для вашего
+            бренда
           </p>
         </motion.div>
 
@@ -120,9 +125,12 @@ export default function TeamSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
               <div className="p-12 text-white">
-                <h3 className="text-3xl mb-2">Trabalhamos juntos para o seu sucesso</h3>
+                <h3 className="text-3xl mb-2">
+                  Trabalhamos juntos para o seu sucesso
+                </h3>
                 <p className="text-lg opacity-90">
-                  Uma equipe multidisciplinar dedicada a entregar excelência em cada projeto
+                  Uma equipe multidisciplinar dedicada a entregar excelência em
+                  cada projeto
                 </p>
               </div>
             </div>
