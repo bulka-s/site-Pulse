@@ -1,0 +1,141 @@
+// Responsive utilities and global adaptive rules
+// Breakpoints
+$bp-sm: 640px;
+$bp-md: 900px;
+$bp-lg: 1200px;
+
+@mixin respond-max($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+// Box sizing and base smoothing
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    // font-family: $font-family;
+    // background: $background;
+    // color: $dark-gray;
+    font-size: clamp(14px, 1.2vw + 12px, 18px);
+    line-height: 1.45;
+    overflow-x: hidden;
+}
+
+// Container utility used across components
+.container,
+.header-container,
+.hero-content {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+// Make media elements responsive
+// img,
+// picture,
+// video,
+// svg {
+//     max-width: 100%;
+//     height: auto;
+//     display: block;
+// }
+
+// Fluid typography for headings
+h1 {
+    font-size: clamp(28px, 4vw, 44px);
+}
+
+h2 {
+    font-size: clamp(22px, 2.6vw, 32px);
+}
+
+h3 {
+    font-size: clamp(18px, 1.6vw, 24px);
+}
+
+// Hero adjustments
+.hero {
+    // height: clamp(320px, 55vh, 600px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-button {
+    width: auto;
+    min-width: 140px;
+    padding: 12px 20px;
+}
+
+// Header adjustments
+.header {
+    padding: 16px 0;
+}
+
+.header-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.header-container ul {
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+// Forms and general layout tweaks
+.contact-form {
+    max-width: 520px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+// Utility row
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// Breakpoint specific tweaks
+@media (max-width: $bp-md) {
+    .hero-content {
+        gap: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .header {
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: $bp-sm) {
+    .header-container ul {
+        gap: 12px;
+    }
+
+    .hero {
+        background-position: top;
+    }
+
+    .hero-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .contact-form {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}

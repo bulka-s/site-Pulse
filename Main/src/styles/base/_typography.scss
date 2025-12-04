@@ -1,0 +1,52 @@
+@use "../base/variables" as *;
+
+// Базовые настройки шрифта
+:root {
+  font-family: $font-family;
+  font-synthesis: $font-synthesis;
+  text-rendering: $text-rendering;
+  -webkit-font-smoothing: $webkit-font-smoothing;
+  -moz-osx-font-smoothing: $moz-osx-font-smoothing;
+}
+
+// Заголовки
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+
+// Параграфы
+.p1,
+.p2,
+.p3,
+.p4 {
+  line-height: 1.5;
+}
+
+.p1 {
+  font-size: 20px;
+}
+.p2 {
+  font-size: 18px;
+}
+.p3 {
+  font-size: 16px;
+}
+.p4 {
+  font-size: 14px;
+}

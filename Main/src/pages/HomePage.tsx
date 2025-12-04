@@ -53,7 +53,6 @@ export default function HomePage() {
       <StatsSection />
       <AdvantagesSection />
       <PortfolioSection />
-      <TeamSection />
       <TestimonialsSection />
       <CTASection onCTAClick={scrollToContactForm} />
       <ContactForm />
