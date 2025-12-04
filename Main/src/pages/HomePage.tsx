@@ -1,20 +1,18 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import TopBar from "../components/TopBar";
 import Header from "../components/Header";
-import Navigation from "../components/Navigation";
-import HeroSection from "../components/HeroSection";
-import ValuesSection from "../components/ValuesSection";
-import AboutSection from "../components/AboutSection";
-import ServicesSection from "../components/ServicesSection";
-import ProcessSection from "../components/ProcessSection";
-import StatsSection from "../components/StatsSection";
-import AdvantagesSection from "../components/AdvantagesSection";
-import PortfolioSection from "../components/PortfolioSection";
-import TeamSection from "../components/TeamSection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import CTASection from "../components/CTASection";
+import Hero from "../components/Hero";
+import Info from "../components/Info";
+import AboutUs from "../components/AboutUs";
+import Services from "../components/Services";
+import Steps from "../components/Steps";
+import WhyChoose from "../components/WhyChoose";
+import Team from "../components/Team";
+import Feedback from "../components/Feedback";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import AuthPage from "./AuthPage";
 
 export default function HomePage() {
   const location = useLocation();
@@ -43,18 +41,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
+      <TopBar />
       <Header />
-      <Navigation onContactClick={scrollToContactForm} />
-      <HeroSection onCTAClick={scrollToContactForm} />
-      <ValuesSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProcessSection />
-      <StatsSection />
-      <AdvantagesSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <CTASection onCTAClick={scrollToContactForm} />
+      <Hero />
+      <Info />
+      <AboutUs />
+      <Services />
+      <Steps />
+      <WhyChoose />
+      <Team />
+      <Feedback />
       <ContactForm />
       <Footer />
     </div>

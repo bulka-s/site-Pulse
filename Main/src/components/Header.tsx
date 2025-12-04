@@ -1,31 +1,93 @@
-import { Phone, Mail, User } from "lucide-react";
-import { Button } from "./ui/button";
+import "./styles/Header.scss";
+import { useState, useEffect } from "react";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
-export default function Header() {
-  return (
-    <div className="bg-[#2C3E50] text-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center py-3 gap-2">
-          <div className="flex flex-col md:flex-row gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>+7 (999) 123-45-67</span>
+function Header() {
+    const [isScrolled, setIsScrolled] = useState<boolean>(false);
+    const scrollToSection = useSmoothScroll();
+    const [navOpen, setNavOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 10);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+        e.preventDefault();
+        scrollToSection(sectionId);
+        setNavOpen(false);
+    };
+
+    return (
+        <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+            <div className="header-container">
+                <img src="/logo.svg" alt="" />
+
+                <button
+                    className={`nav-toggle ${navOpen ? "open" : ""}`}
+                    aria-label={navOpen ? "Закрыть меню" : "Открыть меню"}
+                    aria-expanded={navOpen}
+                    onClick={() => setNavOpen((s) => !s)}
+                >
+                    <span />
+                    <span />
+                    <span />
+                </button>
+
+                <nav className={`header-nav ${navOpen ? "open" : ""}`}>
+                    <ul>
+                        <li>
+                            <a href="#main" onClick={(e) => handleNavClick(e, "main")}>
+                                Главная
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" onClick={(e) => handleNavClick(e, "about")}>
+                                О нас
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#services"
+                                onClick={(e) => handleNavClick(e, "services")}
+                            >
+                                Услуги
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#process" onClick={(e) => handleNavClick(e, "process")}>
+                                Процесс
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#why" onClick={(e) => handleNavClick(e, "why")}>
+                                Преимущества
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#team" onClick={(e) => handleNavClick(e, "team")}>
+                                Команда
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#feedback"
+                                onClick={(e) => handleNavClick(e, "feedback")}
+                            >
+                                Отзывы
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>info@pulsemarketing.ru</span>
-            </div>
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="bg-transparent border-white text-white hover:bg-white hover:text-[#2C3E50]"
-          >
-            <User className="w-4 h-4 mr-2" />
-            Área do Cliente
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
+        </header>
+    );
 }
+
+export default Header;

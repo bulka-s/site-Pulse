@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { services, categories } from '../data/services';
+import { services, categories } from '../data/services.ts';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
@@ -17,18 +17,18 @@ export default function CatalogPage() {
 
   const filteredServices = services.filter((service) => {
     const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         service.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+      service.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesPopular = !showOnlyPopular || service.popular;
-    
+
     return matchesSearch && matchesCategory && matchesPopular;
   });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
+      <Navigation onContactClick={() => { }} />
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           {/* Hero */}
@@ -47,7 +47,7 @@ export default function CatalogPage() {
               <SlidersHorizontal className="w-5 h-5 text-[#1167B1]" />
               <h2 className="text-xl">Фильтры и поиск</h2>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               {/* Search */}
               <div className="relative md:col-span-2">
@@ -137,14 +137,14 @@ export default function CatalogPage() {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="p-6">
                   <div className="text-sm text-[#1167B1] mb-2">{service.categoryName}</div>
                   <h3 className="text-xl mb-3 group-hover:text-[#1167B1] transition-colors">
                     {service.name}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">{service.shortDescription}</p>
-                  
+
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div>
                       <div className="text-sm text-gray-500">от</div>

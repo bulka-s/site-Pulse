@@ -11,6 +11,8 @@ import ThankYouPage from './pages/ThankYouPage';
 import AuthPage from './pages/AuthPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
+import "./styles/main.scss";
+
 
 export default function App() {
   return (
