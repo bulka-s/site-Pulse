@@ -84,6 +84,9 @@ function ContactForm() {
                 </div>
 
                 <div className="field field--textarea">
+                    <label className="mb-2 text-sm" htmlFor="message">
+                        Сообщение
+                    </label>
                     <Textarea
                         id="message"
                         name="message"
