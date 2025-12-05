@@ -27,7 +27,7 @@ function Hero() {
                     <br />
                     надежность и этика.
                 </p>
-                <button className="hero-button p1" onClick={(e) => handleNavClick(e, "form")}>Связаться с нами</button>
+                <button className="hero-button p1" style={{ width: "300px" }} onClick={(e) => handleNavClick(e, "form")}>Связаться с нами</button>
             </div>
         </section>
     );

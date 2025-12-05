@@ -41,7 +41,7 @@ export default function EmailConfirmationPage() {
                                         1
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1">Проверьте папку "Входящие"</h3>
+                                        <h3 className="font-medium mb-1 text-sm">Проверьте папку "Входящие"</h3>
                                         <p className="text-gray-600">
                                             Откройте ваше почтовое приложение или веб-интерфейс
                                         </p>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 import { LogIn, UserPlus, Mail, Lock, User } from 'lucide-react';
 
 export default function AuthPage() {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [registerData, setRegisterData] = useState({
     fullName: '',
@@ -46,7 +47,8 @@ export default function AuthPage() {
       toast.error('Необходимо согласиться с политикой конфиденциальности');
       return;
     }
-    toast.success('Регистрация успешна! Проверьте email для подтверждения.');
+    // Navigate to email confirmation page
+    navigate('/email-confirmation');
   };
 
   const handleReset = (e: React.FormEvent) => {
