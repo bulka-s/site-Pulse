@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
-// import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { services, categories } from "../data/services.ts";
 import { Search, SlidersHorizontal } from "lucide-react";
@@ -37,13 +36,11 @@ export default function CatalogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      {/* <Navigation onContactClick={() => { }} /> */}
-
-      <main className="pt-32 pb-20">
+      <main className="pb-20" style={{ padding: "3rem" }}>
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="mb-12 text-center">
-            <h1 className="text-5xl md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+            <h1 className="text-5xl primary-color md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
               Каталог услуг
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -97,7 +94,7 @@ export default function CatalogPage() {
                 <Checkbox
                   id="popular"
                   checked={showOnlyPopular}
-                  onCheckedChange={(checked) =>
+                  onCheckedChange={(checked: boolean) =>
                     setShowOnlyPopular(checked as boolean)
                   }
                 />
@@ -109,7 +106,7 @@ export default function CatalogPage() {
           </div>
 
           {/* Categories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
             {categories.map((category) => (
               <Link
                 key={category.id}
@@ -137,12 +134,12 @@ export default function CatalogPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredServices.map((service) => (
               <Link
                 key={service.id}
                 to={`/service/${service.id}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 card-content"
               >
                 <div className="h-48 bg-gradient-to-br from-[#1167B1] via-blue-500 to-blue-600 relative overflow-hidden">
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
@@ -158,7 +155,7 @@ export default function CatalogPage() {
                   )}
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full justify-between">
                   <div className="text-sm text-[#1167B1] mb-2">
                     {service.categoryName}
                   </div>

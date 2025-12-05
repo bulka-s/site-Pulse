@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import Navigation from '../components/Navigation';
+// import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { getServiceById } from '../data/services';
 import { ArrowLeft, Check, ShoppingCart, MessageCircle } from 'lucide-react';
@@ -15,7 +15,7 @@ export default function ServicePage() {
   const navigate = useNavigate();
   const { addItem } = useCart();
   const [selectedPackage, setSelectedPackage] = useState<'basic' | 'standard' | 'premium'>('standard');
-  
+
   const service = getServiceById(serviceId || '');
 
   if (!service) {
@@ -51,9 +51,9 @@ export default function ServicePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
-      <main className="pt-32 pb-20">
+      {/* <Navigation onContactClick={() => {}} /> */}
+
+      <main style={{ paddingTop: '3rem', paddingBottom: '8rem' }}>
         <div className="container mx-auto px-4">
           {/* Breadcrumbs */}
           <div className="mb-8 flex items-center gap-2 text-sm">
@@ -137,7 +137,7 @@ export default function ServicePage() {
               <div className="sticky top-24">
                 <div className="bg-white rounded-2xl p-6 shadow-xl">
                   <h3 className="text-xl mb-6">Выберите пакет</h3>
-                  
+
                   <div className="space-y-4 mb-6">
                     {(['basic', 'standard', 'premium'] as const).map((pkg) => {
                       const packageInfo = service.packages[pkg];
@@ -146,16 +146,15 @@ export default function ServicePage() {
                         standard: 'Стандартный',
                         premium: 'Премиум'
                       };
-                      
+
                       return (
                         <div
                           key={pkg}
                           onClick={() => setSelectedPackage(pkg)}
-                          className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
-                            selectedPackage === pkg
-                              ? 'border-[#1167B1] bg-[#1167B1]/5'
-                              : 'border-gray-200 hover:border-[#1167B1]/50'
-                          }`}
+                          className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${selectedPackage === pkg
+                            ? 'border-[#1167B1] bg-[#1167B1]/5'
+                            : 'border-gray-200 hover:border-[#1167B1]/50'
+                            }`}
                         >
                           <div className="flex items-center justify-between mb-3">
                             <h4 className="font-medium">{packageLabels[pkg]}</h4>

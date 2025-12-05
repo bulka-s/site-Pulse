@@ -3,10 +3,10 @@ import './styles/Footer.scss';
 
 function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer p4">
       <div className="site-footer__inner">
         <div className="footer-col footer-col--about">
-          <img src="/logo-white.svg" alt="" />
+          <img src="/logo-white.svg" alt="" style={{ marginBottom: "10px" }} />
           <p className="footer-desc">
             Мы задаём ритм вашей марке и создаём импульсы роста для вашего бизнеса.
           </p>

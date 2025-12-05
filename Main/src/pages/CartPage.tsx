@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import Navigation from '../components/Navigation';
+// import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
 import { ShoppingCart, Trash2, ArrowRight, Package } from 'lucide-react';
@@ -20,12 +20,12 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
         <Header />
-        <Navigation onContactClick={() => {}} />
-        
+        {/* <Navigation onContactClick={() => {}} /> */}
+
         <main className="pt-32 pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center py-20">
-              <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gray-100 flex items-center justify-center">
+              <div className="w-32 h-32 mx-auto mb-8 rounded-full flex items-center justify-center">
                 <ShoppingCart className="w-16 h-16 text-gray-400" />
               </div>
               <h1 className="text-4xl mb-4">Корзина пуста</h1>
@@ -49,8 +49,8 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
+      {/* <Navigation onContactClick={() => { }} /> */}
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="mb-12">
@@ -71,7 +71,7 @@ export default function CartPage() {
                     <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#1167B1] to-blue-600 flex items-center justify-center flex-shrink-0">
                       <Package className="w-10 h-10 text-white" />
                     </div>
-                    
+
                     <div className="flex-1">
                       <div className="flex items-start justify-between mb-2">
                         <div>
@@ -87,14 +87,14 @@ export default function CartPage() {
                           <Trash2 className="w-5 h-5" />
                         </Button>
                       </div>
-                      
+
                       <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
                         <div className="px-3 py-1 bg-[#1167B1]/10 text-[#1167B1] rounded-full">
                           {packageLabels[item.package]} пакет
                         </div>
                         <div>⏱ {item.duration}</div>
                       </div>
-                      
+
                       <div className="text-2xl text-[#1167B1]">
                         {item.price.toLocaleString('ru-RU')} ₽
                       </div>
@@ -108,13 +108,13 @@ export default function CartPage() {
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl p-6 shadow-xl sticky top-24">
                 <h2 className="text-2xl mb-6">Итого</h2>
-                
+
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Количество услуг:</span>
                     <span className="font-medium">{itemCount}</span>
                   </div>
-                  
+
                   <div className="border-t pt-4">
                     <div className="flex justify-between items-baseline mb-2">
                       <span className="text-lg">Общая стоимость:</span>

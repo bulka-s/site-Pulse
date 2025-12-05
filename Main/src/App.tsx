@@ -8,9 +8,11 @@ import ServicePage from './pages/ServicePage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import ThankYouPage from './pages/ThankYouPage';
+import EmailConfirmationPage from './pages/EmailConfirmationPage';
 import AuthPage from './pages/AuthPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
+import "./components/styles/ContactForm.scss"
 import "./styles/main.scss";
 
 
@@ -28,6 +30,7 @@ export default function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/email-confirmation" element={<EmailConfirmationPage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

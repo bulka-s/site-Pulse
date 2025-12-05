@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import Navigation from '../components/Navigation';
+// import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
 import { Button } from '../components/ui/button';
@@ -16,7 +16,7 @@ import { toast } from 'sonner';
 export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart();
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
     fullName: '',
     position: '',
@@ -29,6 +29,8 @@ export default function CheckoutPage() {
     agreeToNewsletter: false,
   });
 
+  const [orderSubmitted, setOrderSubmitted] = useState(false);
+
   const packageLabels = {
     basic: 'Базовый',
     standard: 'Стандартный',
@@ -37,7 +39,7 @@ export default function CheckoutPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.agreeToTerms) {
       toast.error('Необходимо согласиться с условиями обработки персональных данных');
       return;
@@ -50,11 +52,12 @@ export default function CheckoutPage() {
 
     // Simulate order submission
     toast.success('Заказ успешно оформлен!');
-    clearCart();
+    setOrderSubmitted(true);
     navigate('/thank-you');
+    clearCart();
   };
 
-  if (items.length === 0) {
+  if (items.length === 0 && !orderSubmitted) {
     navigate('/cart');
     return null;
   }
@@ -62,9 +65,9 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
-      <main className="pt-32 pb-20">
+      {/* <Navigation onContactClick={() => {}} /> */}
+
+      <main className="pb-20" style={{ paddingTop: "3rem" }}>
         <div className="container mx-auto px-4">
           <div className="mb-12">
             <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
@@ -80,10 +83,10 @@ export default function CheckoutPage() {
             <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
                 <h2 className="text-2xl mb-6">Данные покупателя</h2>
-                
+
                 <div className="space-y-6">
                   <div>
-                    <Label htmlFor="fullName">ФИО *</Label>
+                    {/* <Label htmlFor="fullName">ФИО *</Label> */}
                     <Input
                       id="fullName"
                       type="text"
@@ -96,7 +99,7 @@ export default function CheckoutPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="position">Должность</Label>
+                      {/* <Label htmlFor="position">Должность</Label> */}
                       <Input
                         id="position"
                         type="text"
@@ -106,7 +109,7 @@ export default function CheckoutPage() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="company">Компания</Label>
+                      {/* <Label htmlFor="company">Компания</Label> */}
                       <Input
                         id="company"
                         type="text"
@@ -120,7 +123,7 @@ export default function CheckoutPage() {
                   <h3 className="text-xl pt-4">Контакты</h3>
 
                   <div>
-                    <Label htmlFor="email">Email *</Label>
+                    {/* <Label htmlFor="email">Email *</Label> */}
                     <Input
                       id="email"
                       type="email"
@@ -133,18 +136,18 @@ export default function CheckoutPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="phone">Телефон *</Label>
+                      {/* <Label htmlFor="phone">Телефон *</Label> */}
                       <Input
                         id="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+7 (999) 123-45-67"
+                        placeholder="Номер"
                         required
                       />
                     </div>
                     <div>
-                      <Label htmlFor="messenger">Мессенджер</Label>
+                      {/* <Label htmlFor="messenger">Мессенджер</Label> */}
                       <Select
                         value={formData.messenger}
                         onValueChange={(value) => setFormData({ ...formData, messenger: value })}
@@ -163,7 +166,7 @@ export default function CheckoutPage() {
                   </div>
 
                   <div>
-                    <Label htmlFor="comment">Комментарий к заказу</Label>
+                    {/* <Label htmlFor="comment">Комментарий к заказу</Label> */}
                     <Textarea
                       id="comment"
                       value={formData.comment}
@@ -178,7 +181,7 @@ export default function CheckoutPage() {
                       <Checkbox
                         id="terms"
                         checked={formData.agreeToTerms}
-                        onCheckedChange={(checked) => 
+                        onCheckedChange={(checked) =>
                           setFormData({ ...formData, agreeToTerms: checked as boolean })
                         }
                       />
@@ -191,7 +194,7 @@ export default function CheckoutPage() {
                       <Checkbox
                         id="newsletter"
                         checked={formData.agreeToNewsletter}
-                        onCheckedChange={(checked) => 
+                        onCheckedChange={(checked) =>
                           setFormData({ ...formData, agreeToNewsletter: checked as boolean })
                         }
                       />
@@ -216,7 +219,7 @@ export default function CheckoutPage() {
             <div className="lg:col-span-1">
               <div className="bg-white rounded-2xl p-6 shadow-xl sticky top-24">
                 <h2 className="text-2xl mb-6">Ваш заказ</h2>
-                
+
                 <div className="space-y-4 mb-6 max-h-[400px] overflow-y-auto">
                   {items.map((item) => (
                     <div key={item.id} className="pb-4 border-b last:border-0">

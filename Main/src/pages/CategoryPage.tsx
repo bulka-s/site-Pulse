@@ -7,13 +7,14 @@ import { getServicesByCategory, getCategoryById } from '../data/services';
 import { ArrowLeft, ArrowUpDown } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import '../styles/main.scss';
 
 type SortOption = 'popular' | 'price-asc' | 'price-desc' | 'duration';
 
 export default function CategoryPage() {
   const { category } = useParams<{ category: string }>();
   const [sortBy, setSortBy] = useState<SortOption>('popular');
-  
+
   const categoryInfo = getCategoryById(category || '');
   const allServices = getServicesByCategory(category || '');
 
@@ -46,9 +47,9 @@ export default function CategoryPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
-      <main className="pt-32 pb-20">
+      {/* <Navigation onContactClick={() => { }} /> */}
+
+      <main className="pb-20" style={{ paddingTop: "3rem" }}>
         <div className="container mx-auto px-4">
           {/* Breadcrumbs */}
           <div className="mb-8">
@@ -60,9 +61,9 @@ export default function CategoryPage() {
 
           {/* Category Hero */}
           <div className="mb-12">
-            <div className="inline-block px-4 py-2 bg-[#1167B1]/10 text-[#1167B1] rounded-full mb-4">
+            {/* <div className="inline-block px-4 py-2 bg-[#1167B1]/10 text-[#1167B1] rounded-full mb-4">
               {allServices.length} {allServices.length === 1 ? 'услуга' : 'услуг'}
-            </div>
+            </div> */}
             <h1 className="text-5xl md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
               {categoryInfo.name}
             </h1>
@@ -91,12 +92,12 @@ export default function CategoryPage() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {sortedServices.map((service) => (
               <Link
                 key={service.id}
                 to={`/service/${service.id}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 card-content"
               >
                 <div className="h-48 bg-gradient-to-br from-[#1167B1] via-blue-500 to-blue-600 relative overflow-hidden">
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
@@ -111,17 +112,17 @@ export default function CategoryPage() {
                     </div>
                   )}
                 </div>
-                
-                <div className="p-6">
+
+                <div className="p-6 flex flex-col h-full justify-between  ">
                   <h3 className="text-xl mb-3 group-hover:text-[#1167B1] transition-colors">
                     {service.name}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">{service.shortDescription}</p>
-                  
+
                   <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
                     <div>⏱ {service.duration}</div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div>
                       <div className="text-sm text-gray-500">от</div>

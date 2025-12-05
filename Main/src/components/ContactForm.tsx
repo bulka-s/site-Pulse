@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles/ContactForm.scss";
+import { Textarea } from "./ui/textarea";
 
 interface FormData {
     name: string;
@@ -86,7 +87,7 @@ function ContactForm() {
                     <label className="field__label" htmlFor="message">
                         Сообщение
                     </label>
-                    <textarea
+                    <Textarea
                         id="message"
                         name="message"
                         className="field__input field__textarea"

@@ -12,17 +12,17 @@ export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
+      {/* <Navigation onContactClick={() => {}} /> */}
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             {/* Success Icon */}
-            <div className="flex justify-center mb-8">
+            {/* <div className="flex justify-center mb-8">
               <div className="w-32 h-32 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center animate-bounce">
                 <CheckCircle className="w-20 h-20 text-white" />
               </div>
-            </div>
+            </div> */}
 
             {/* Main Message */}
             <div className="text-center mb-12">
@@ -88,7 +88,7 @@ export default function ThankYouPage() {
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
               <h2 className="text-2xl mb-6">Что будет дальше?</h2>
               <div className="space-y-4">
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-full bg-[#1167B1] text-white flex items-center justify-center flex-shrink-0">
                     1
                   </div>
@@ -99,7 +99,7 @@ export default function ThankYouPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-full bg-[#1167B1] text-white flex items-center justify-center flex-shrink-0">
                     2
                   </div>
@@ -110,7 +110,7 @@ export default function ThankYouPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-full bg-[#1167B1] text-white flex items-center justify-center flex-shrink-0">
                     3
                   </div>

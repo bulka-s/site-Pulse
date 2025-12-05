@@ -2,3 +2,12 @@
 @use "./base/reset" as *;
 @use "./base/typography" as *;
 @use "./base/responsive" as *;
+
+.primary-color {
+    color: $primary-color;
+}
+
+.card-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}

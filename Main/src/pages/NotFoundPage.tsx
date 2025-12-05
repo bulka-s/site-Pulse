@@ -9,11 +9,11 @@ export default function NotFoundPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
+      {/* <Navigation onContactClick={() => {}} /> */}
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             {/* 404 Number */}
             <div className="mb-8">
               <h1 className="text-[150px] md:text-[200px] leading-none bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">

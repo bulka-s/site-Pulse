@@ -2,11 +2,14 @@ import "./styles/Header.scss";
 import { useState, useEffect } from "react";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const scrollToSection = useSmoothScroll();
   const [navOpen, setNavOpen] = useState<boolean>(false);
+  const { itemCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,12 +51,12 @@ function Header() {
           <ul>
             <li>
               <a href="#main" onClick={(e) => handleNavClick(e, "main")}>
-                Главная
+                <Link to="/">Главная</Link>
               </a>
             </li>
             <li>
               <a href="#about" onClick={(e) => handleNavClick(e, "about")}>
-                О нас
+                <Link to="/">О нас</Link>
               </a>
             </li>
             <li>
@@ -62,6 +65,14 @@ function Header() {
             <li>
               <Link to="/auth">Войти</Link>
             </li>
+            <Link to="/cart" className="relative p-2 text-gray-700 hover:text-[#1167B1] transition-colors">
+              <ShoppingCart className="w-6 h-6" />
+              {itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#1167B1] text-white text-xs rounded-full flex items-center justify-center">
+                  {itemCount}
+                </span>
+              )}
+            </Link>
             {/* <li>
                             <a href="#process" onClick={(e) => handleNavClick(e, "process")}>
                                 Процесс

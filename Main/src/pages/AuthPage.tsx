@@ -63,8 +63,8 @@ export default function AuthPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
         <Header />
-        <Navigation onContactClick={() => {}} />
-        
+        {/* <Navigation onContactClick={() => { }} /> */}
+
         <main className="pt-32 pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-md mx-auto">
@@ -81,7 +81,7 @@ export default function AuthPage() {
 
                 <form onSubmit={handleReset} className="space-y-4">
                   <div>
-                    <Label htmlFor="reset-email">Email</Label>
+                    {/* <Label htmlFor="reset-email">Email</Label> */}
                     <Input
                       id="reset-email"
                       type="email"
@@ -118,8 +118,8 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => {}} />
-      
+      {/* <Navigation onContactClick={() => { }} /> */}
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto">
@@ -147,32 +147,30 @@ export default function AuthPage() {
 
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div>
-                      <Label htmlFor="login-email">Email</Label>
+                      {/* <Label htmlFor="login-email">Email</Label> */}
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        {/* <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                         <Input
                           id="login-email"
                           type="email"
                           value={loginData.email}
                           onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
                           placeholder="example@mail.ru"
-                          className="pl-10"
                           required
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="login-password">Пароль</Label>
+                      {/* <Label htmlFor="login-password">Пароль</Label> */}
                       <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        {/* <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                         <Input
                           id="login-password"
                           type="password"
                           value={loginData.password}
                           onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                          placeholder="••••••••"
-                          className="pl-10"
+                          placeholder="Пароль"
                           required
                         />
                       </div>
@@ -208,63 +206,60 @@ export default function AuthPage() {
 
                   <form onSubmit={handleRegister} className="space-y-4">
                     <div>
-                      <Label htmlFor="register-name">ФИО</Label>
+                      {/* <Label htmlFor="register-name">ФИО</Label> */}
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        {/* <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                         <Input
                           id="register-name"
                           type="text"
                           value={registerData.fullName}
                           onChange={(e) => setRegisterData({ ...registerData, fullName: e.target.value })}
                           placeholder="Иванов Иван Иванович"
-                          className="pl-10"
                           required
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="register-email">Email</Label>
+                      {/* <Label htmlFor="register-email">Email</Label> */}
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        {/* <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                         <Input
                           id="register-email"
                           type="email"
                           value={registerData.email}
                           onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
                           placeholder="example@mail.ru"
-                          className="pl-10"
                           required
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="register-password">Пароль</Label>
+                      {/* <Label htmlFor="register-password">Пароль</Label> */}
                       <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        {/* <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                         <Input
                           id="register-password"
                           type="password"
                           value={registerData.password}
                           onChange={(e) => setRegisterData({ ...registerData, password: e.target.value })}
-                          placeholder="••••••••"
-                          className="pl-10"
+                          placeholder="Пароль"
                           required
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="register-confirm-password">Подтверждение пароля</Label>
+                      {/* <Label htmlFor="register-confirm-password">Подтверждение пароля</Label> */}
                       <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        {/* <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                         <Input
                           id="register-confirm-password"
                           type="password"
                           value={registerData.confirmPassword}
                           onChange={(e) => setRegisterData({ ...registerData, confirmPassword: e.target.value })}
-                          placeholder="••••••••"
+                          placeholder="Подтвердите пароль"
                           className="pl-10"
                           required
                         />
@@ -275,7 +270,7 @@ export default function AuthPage() {
                       <Checkbox
                         id="terms"
                         checked={registerData.agreeToTerms}
-                        onCheckedChange={(checked) => 
+                        onCheckedChange={(checked) =>
                           setRegisterData({ ...registerData, agreeToTerms: checked as boolean })
                         }
                       />
