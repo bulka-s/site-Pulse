@@ -1,24 +1,34 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import { services, categories } from '../data/services.ts';
-import { Search, SlidersHorizontal } from 'lucide-react';
-import { Input } from '../components/ui/input';
-import { Button } from '../components/ui/button';
-import { Checkbox } from '../components/ui/checkbox';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+// import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import { services, categories } from "../data/services.ts";
+import { Search, SlidersHorizontal } from "lucide-react";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Checkbox } from "../components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 
 export default function CatalogPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [showOnlyPopular, setShowOnlyPopular] = useState(false);
 
   const filteredServices = services.filter((service) => {
-    const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const matchesSearch =
+      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.shortDescription
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "all" || service.category === selectedCategory;
     const matchesPopular = !showOnlyPopular || service.popular;
 
     return matchesSearch && matchesCategory && matchesPopular;
@@ -27,7 +37,7 @@ export default function CatalogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Header />
-      <Navigation onContactClick={() => { }} />
+      {/* <Navigation onContactClick={() => { }} /> */}
 
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
@@ -37,7 +47,8 @@ export default function CatalogPage() {
               Каталог услуг
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Полный спектр маркетинговых решений для вашего бизнеса. Выберите нужную услугу или воспользуйтесь фильтрами для быстрого поиска.
+              Полный спектр маркетинговых решений для вашего бизнеса. Выберите
+              нужную услугу или воспользуйтесь фильтрами для быстрого поиска.
             </p>
           </div>
 
@@ -62,7 +73,10 @@ export default function CatalogPage() {
               </div>
 
               {/* Category Select */}
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <Select
+                value={selectedCategory}
+                onValueChange={setSelectedCategory}
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Все категории" />
                 </SelectTrigger>
@@ -83,7 +97,9 @@ export default function CatalogPage() {
                 <Checkbox
                   id="popular"
                   checked={showOnlyPopular}
-                  onCheckedChange={(checked) => setShowOnlyPopular(checked as boolean)}
+                  onCheckedChange={(checked) =>
+                    setShowOnlyPopular(checked as boolean)
+                  }
                 />
                 <label htmlFor="popular" className="text-sm cursor-pointer">
                   Только популярные
@@ -104,7 +120,9 @@ export default function CatalogPage() {
                   <div className="w-6 h-6 bg-white rounded" />
                 </div>
                 <h3 className="text-lg mb-2 text-gray-900">{category.name}</h3>
-                <p className="text-sm text-gray-600 line-clamp-2">{category.description}</p>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  {category.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -113,7 +131,9 @@ export default function CatalogPage() {
           <div className="mb-8">
             <h2 className="text-3xl mb-8">
               Все услуги
-              <span className="text-gray-400 text-xl ml-3">({filteredServices.length})</span>
+              <span className="text-gray-400 text-xl ml-3">
+                ({filteredServices.length})
+              </span>
             </h2>
           </div>
 
@@ -139,17 +159,21 @@ export default function CatalogPage() {
                 </div>
 
                 <div className="p-6">
-                  <div className="text-sm text-[#1167B1] mb-2">{service.categoryName}</div>
+                  <div className="text-sm text-[#1167B1] mb-2">
+                    {service.categoryName}
+                  </div>
                   <h3 className="text-xl mb-3 group-hover:text-[#1167B1] transition-colors">
                     {service.name}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">{service.shortDescription}</p>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    {service.shortDescription}
+                  </p>
 
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div>
                       <div className="text-sm text-gray-500">от</div>
                       <div className="text-2xl text-[#1167B1]">
-                        {service.packages.basic.price.toLocaleString('ru-RU')} ₽
+                        {service.packages.basic.price.toLocaleString("ru-RU")} ₽
                       </div>
                     </div>
                     <Button className="bg-[#1167B1] hover:bg-blue-700">
@@ -167,7 +191,9 @@ export default function CatalogPage() {
                 <Search className="w-12 h-12 text-gray-400" />
               </div>
               <h3 className="text-2xl mb-2">Услуги не найдены</h3>
-              <p className="text-gray-600">Попробуйте изменить параметры поиска или фильтры</p>
+              <p className="text-gray-600">
+                Попробуйте изменить параметры поиска или фильтры
+              </p>
             </div>
           )}
 
@@ -180,7 +206,11 @@ export default function CatalogPage() {
               Мы разработаем индивидуальное решение под ваши задачи
             </p>
             <Link to="/">
-              <Button size="lg" variant="secondary" className="bg-white text-[#1167B1] hover:bg-gray-100">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-white text-[#1167B1] hover:bg-gray-100"
+              >
                 Обсудить проект
               </Button>
             </Link>

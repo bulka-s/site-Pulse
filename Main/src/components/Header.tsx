@@ -1,66 +1,68 @@
 import "./styles/Header.scss";
 import { useState, useEffect } from "react";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import { Link } from "react-router-dom";
 
 function Header() {
-    const [isScrolled, setIsScrolled] = useState<boolean>(false);
-    const scrollToSection = useSmoothScroll();
-    const [navOpen, setNavOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const scrollToSection = useSmoothScroll();
+  const [navOpen, setNavOpen] = useState<boolean>(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-        e.preventDefault();
-        scrollToSection(sectionId);
-        setNavOpen(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
     };
 
-    return (
-        <header className={`header ${isScrolled ? "scrolled" : ""}`}>
-            <div className="header-container">
-                <img src="/logo.svg" alt="" />
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-                <button
-                    className={`nav-toggle ${navOpen ? "open" : ""}`}
-                    aria-label={navOpen ? "Закрыть меню" : "Открыть меню"}
-                    aria-expanded={navOpen}
-                    onClick={() => setNavOpen((s) => !s)}
-                >
-                    <span />
-                    <span />
-                    <span />
-                </button>
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-                <nav className={`header-nav ${navOpen ? "open" : ""}`}>
-                    <ul>
-                        <li>
-                            <a href="#main" onClick={(e) => handleNavClick(e, "main")}>
-                                Главная
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" onClick={(e) => handleNavClick(e, "about")}>
-                                О нас
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#services"
-                                onClick={(e) => handleNavClick(e, "services")}
-                            >
-                                Услуги
-                            </a>
-                        </li>
-                        <li>
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+    setNavOpen(false);
+  };
+
+  return (
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+      <div className="header-container">
+        <img src="/logo.svg" alt="" />
+
+        <button
+          className={`nav-toggle ${navOpen ? "open" : ""}`}
+          aria-label={navOpen ? "Закрыть меню" : "Открыть меню"}
+          aria-expanded={navOpen}
+          onClick={() => setNavOpen((s) => !s)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav className={`header-nav ${navOpen ? "open" : ""}`}>
+          <ul>
+            <li>
+              <a href="#main" onClick={(e) => handleNavClick(e, "main")}>
+                Главная
+              </a>
+            </li>
+            <li>
+              <a href="#about" onClick={(e) => handleNavClick(e, "about")}>
+                О нас
+              </a>
+            </li>
+            <li>
+              <Link to="/catalog">Каталог</Link>
+            </li>
+            <li>
+              <Link to="/auth">Войти</Link>
+            </li>
+            {/* <li>
                             <a href="#process" onClick={(e) => handleNavClick(e, "process")}>
                                 Процесс
                             </a>
@@ -82,12 +84,12 @@ function Header() {
                             >
                                 Отзывы
                             </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-    );
+                        </li> */}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
 export default Header;
