@@ -21,7 +21,7 @@ export default function EmailConfirmationPage() {
 
                         {/* Main Message */}
                         <div className="text-center mb-12">
-                            <h1 className="text-5xl md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
                                 Проверьте почту
                             </h1>
                             <p className="text-xl text-gray-600 mb-4">
@@ -34,7 +34,7 @@ export default function EmailConfirmationPage() {
 
                         {/* Instructions */}
                         <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-                            <h2 className="text-2xl mb-6">Что делать дальше?</h2>
+                            <h2 className="text-3xl md:text-4xl mb-6">Что делать дальше?</h2>
                             <div className="space-y-4">
                                 <div className="flex gap-4 items-center">
                                     <div className="w-10 h-10 rounded-full bg-[#1167B1] text-white flex items-center justify-center flex-shrink-0 mt-1">
@@ -74,7 +74,7 @@ export default function EmailConfirmationPage() {
 
                         {/* Additional Info */}
                         <div className="bg-gradient-to-r from-[#1167B1] to-blue-600 rounded-2xl p-8 text-white mb-8">
-                            <h2 className="text-2xl mb-4">Не получили письмо?</h2>
+                            <h2 className="text-3xl md:text-4xl mb-4">Не получили письмо?</h2>
                             <div className="space-y-3">
                                 <p>✓ Проверьте папку "Спам" или "Нежелательная почта"</p>
                                 <p>✓ Убедитесь, что email адрес введен правильно</p>

@@ -28,7 +28,7 @@ export default function CartPage() {
               <div className="w-32 h-32 mx-auto mb-8 rounded-full flex items-center justify-center">
                 <ShoppingCart className="w-16 h-16 text-gray-400" />
               </div>
-              <h1 className="text-4xl mb-4">Корзина пуста</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4">Корзина пуста</h1>
               <p className="text-xl text-gray-600 mb-8">
                 Добавьте услуги из каталога, чтобы начать оформление заказа
               </p>
@@ -54,7 +54,7 @@ export default function CartPage() {
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
               Корзина услуг
             </h1>
             <p className="text-xl text-gray-600">
@@ -75,7 +75,7 @@ export default function CartPage() {
                     <div className="flex-1">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <h3 className="text-xl mb-1">{item.name}</h3>
+                          <h3 className="text-2xl mb-1">{item.name}</h3>
                           <div className="text-sm text-gray-500">{item.category}</div>
                         </div>
                         <Button
@@ -95,7 +95,7 @@ export default function CartPage() {
                         <div>⏱ {item.duration}</div>
                       </div>
 
-                      <div className="text-2xl text-[#1167B1]">
+                      <div className="text-3xl text-[#1167B1]">
                         {item.price.toLocaleString('ru-RU')} ₽
                       </div>
                     </div>
@@ -107,7 +107,7 @@ export default function CartPage() {
             {/* Summary */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl p-6 shadow-xl sticky top-24">
-                <h2 className="text-2xl mb-6">Итого</h2>
+                <h2 className="text-3xl md:text-4xl mb-6">Итого</h2>
 
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between text-gray-600">
@@ -118,7 +118,7 @@ export default function CartPage() {
                   <div className="border-t pt-4">
                     <div className="flex justify-between items-baseline mb-2">
                       <span className="text-lg">Общая стоимость:</span>
-                      <span className="text-3xl text-[#1167B1]">
+                      <span className="text-4xl text-[#1167B1]">
                         {totalPrice.toLocaleString('ru-RU')} ₽
                       </span>
                     </div>
@@ -164,3 +164,4 @@ export default function CartPage() {
     </div>
   );
 }
+

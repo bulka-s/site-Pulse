@@ -22,7 +22,7 @@ export default function ServicePage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl mb-4">Услуга не найдена</h2>
+          <h2 className="text-3xl md:text-4xl mb-4">Услуга не найдена</h2>
           <Link to="/catalog">
             <Button>Вернуться в каталог</Button>
           </Link>
@@ -74,24 +74,24 @@ export default function ServicePage() {
                 <div className="inline-block px-4 py-2 bg-[#1167B1]/10 text-[#1167B1] rounded-full mb-4">
                   {service.categoryName}
                 </div>
-                <h1 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
                   {service.name}
                 </h1>
-                <p className="text-xl text-gray-600">
+                <p className="text-lg text-gray-600">
                   {service.fullDescription}
                 </p>
               </div>
 
               {/* What's Included */}
               <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-                <h2 className="text-2xl mb-6">Что входит в услугу</h2>
+                <h2 className="text-3xl md:text-4xl mb-6">Что входит в услугу</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.includes.map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-[#1167B1]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-4 h-4 text-[#1167B1]" />
                       </div>
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-gray-700 text-base">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -99,7 +99,7 @@ export default function ServicePage() {
 
               {/* Stages */}
               <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-                <h2 className="text-2xl mb-6">Этапы работы</h2>
+                <h2 className="text-3xl md:text-4xl mb-6">Этапы работы</h2>
                 <div className="space-y-4">
                   {service.stages.map((stage, index) => (
                     <div key={index} className="flex items-start gap-4">
@@ -116,7 +116,7 @@ export default function ServicePage() {
 
               {/* FAQ */}
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 className="text-2xl mb-6">Часто задаваемые вопросы</h2>
+                <h2 className="text-3xl md:text-4xl mb-6">Часто задаваемые вопросы</h2>
                 <Accordion type="single" collapsible className="w-full">
                   {service.faq.map((item, index) => (
                     <AccordionItem key={index} value={`item-${index}`}>
@@ -136,7 +136,7 @@ export default function ServicePage() {
             <div className="lg:col-span-1">
               <div className="sticky top-24">
                 <div className="bg-white rounded-2xl p-6 shadow-xl">
-                  <h3 className="text-xl mb-6">Выберите пакет</h3>
+                  <h3 className="text-2xl mb-6">Выберите пакет</h3>
 
                   <div className="space-y-4 mb-6">
                     {(['basic', 'standard', 'premium'] as const).map((pkg) => {
@@ -159,7 +159,7 @@ export default function ServicePage() {
                           <div className="flex items-center justify-between mb-3">
                             <h4 className="font-medium">{packageLabels[pkg]}</h4>
                             <div className="text-right">
-                              <div className="text-2xl text-[#1167B1]">
+                              <div className="text-3xl text-[#1167B1]">
                                 {packageInfo.price.toLocaleString('ru-RU')} ₽
                               </div>
                             </div>
@@ -207,7 +207,7 @@ export default function ServicePage() {
 
                 {/* Help Block */}
                 <div className="mt-6 bg-gradient-to-br from-[#1167B1] to-blue-600 rounded-2xl p-6 text-white">
-                  <h4 className="text-lg mb-2">Нужна помощь?</h4>
+                  <h4 className="text-xl mb-2">Нужна помощь?</h4>
                   <p className="text-sm mb-4 opacity-90">
                     Наши специалисты помогут выбрать оптимальное решение для ваших задач
                   </p>

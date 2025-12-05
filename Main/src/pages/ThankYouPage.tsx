@@ -26,7 +26,7 @@ export default function ThankYouPage() {
 
             {/* Main Message */}
             <div className="text-center mb-12">
-              <h1 className="text-5xl md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
                 Заказ успешно оформлен!
               </h1>
               <p className="text-xl text-gray-600">
@@ -36,7 +36,7 @@ export default function ThankYouPage() {
 
             {/* Order Info */}
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-              <h2 className="text-2xl mb-6">Информация о заказе</h2>
+              <h2 className="text-3xl md:text-4xl mb-6">Информация о заказе</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <div className="text-sm text-gray-500 mb-1">Номер заказа</div>
@@ -57,7 +57,7 @@ export default function ThankYouPage() {
 
             {/* Contact Info */}
             <div className="bg-gradient-to-r from-[#1167B1] to-blue-600 rounded-2xl p-8 text-white mb-8">
-              <h2 className="text-2xl mb-4">По всем вопросам обращайтесь:</h2>
+              <h2 className="text-3xl md:text-4xl mb-4">По всем вопросам обращайтесь:</h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -65,7 +65,7 @@ export default function ThankYouPage() {
                   </div>
                   <div>
                     <div className="text-sm opacity-80">Телефон</div>
-                    <a href="tel:+79991234567" className="text-lg hover:underline">
+                    <a href="tel:+79991234567" className="text-base hover:underline">
                       +7 (999) 123-45-67
                     </a>
                   </div>
@@ -76,7 +76,7 @@ export default function ThankYouPage() {
                   </div>
                   <div>
                     <div className="text-sm opacity-80">Email</div>
-                    <a href="mailto:info@pulsemarketing.ru" className="text-lg hover:underline">
+                    <a href="mailto:info@pulsemarketing.ru" className="text-base hover:underline">
                       info@pulsemarketing.ru
                     </a>
                   </div>
@@ -86,15 +86,15 @@ export default function ThankYouPage() {
 
             {/* Next Steps */}
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-              <h2 className="text-2xl mb-6">Что будет дальше?</h2>
+              <h2 className="text-3xl md:text-4xl mb-6">Что будет дальше?</h2>
               <div className="space-y-4">
                 <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-full bg-[#1167B1] text-white flex items-center justify-center flex-shrink-0">
                     1
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Связь с менеджером</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-medium mb-1 text-lg">Связь с менеджером</h3>
+                    <p className="text-gray-600 text-base ">
                       В течение 2 часов наш менеджер свяжется с вами для подтверждения заказа
                     </p>
                   </div>
@@ -104,8 +104,8 @@ export default function ThankYouPage() {
                     2
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Обсуждение деталей</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-medium mb-1 text-lg">Обсуждение деталей</h3>
+                    <p className="text-gray-600 text-base ">
                       Уточним все детали проекта, ответим на ваши вопросы и согласуем сроки
                     </p>
                   </div>
@@ -115,8 +115,8 @@ export default function ThankYouPage() {
                     3
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Начало работы</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-medium mb-1 text-lg">Начало работы</h3>
+                    <p className="text-gray-600 text-base ">
                       После согласования всех деталей мы сразу приступим к выполнению вашего заказа
                     </p>
                   </div>

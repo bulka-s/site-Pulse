@@ -40,7 +40,7 @@ export default function CatalogPage() {
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="mb-12 text-center">
-            <h1 className="text-5xl primary-color md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
               Каталог услуг
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -53,13 +53,13 @@ export default function CatalogPage() {
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-12">
             <div className="flex items-center gap-2 mb-6">
               <SlidersHorizontal className="w-5 h-5 text-[#1167B1]" />
-              <h2 className="text-xl">Фильтры и поиск</h2>
+              <h2 className="text-3xl md:text-4xl">Фильтры и поиск</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               {/* Search */}
               <div className="relative md:col-span-2">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                {/* <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                 <Input
                   type="text"
                   placeholder="Введите название услуги..."
@@ -116,7 +116,7 @@ export default function CatalogPage() {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#1167B1] to-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <div className="w-6 h-6 bg-white rounded" />
                 </div>
-                <h3 className="text-lg mb-2 text-gray-900">{category.name}</h3>
+                <h3 className="text-2xl mb-2 text-gray-900">{category.name}</h3>
                 <p className="text-sm text-gray-600 line-clamp-2">
                   {category.description}
                 </p>
@@ -126,7 +126,7 @@ export default function CatalogPage() {
 
           {/* Services Grid */}
           <div className="mb-8">
-            <h2 className="text-3xl mb-8">
+            <h2 className="text-3xl md:text-4xl mb-8">
               Все услуги
               <span className="text-gray-400 text-xl ml-3">
                 ({filteredServices.length})
@@ -159,17 +159,17 @@ export default function CatalogPage() {
                   <div className="text-sm text-[#1167B1] mb-2">
                     {service.categoryName}
                   </div>
-                  <h3 className="text-xl mb-3 group-hover:text-[#1167B1] transition-colors">
+                  <h3 className="text-2xl mb-3 group-hover:text-[#1167B1] transition-colors">
                     {service.name}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
+                  <p className="text-gray-600 mb-4 line-clamp-2 text-base">
                     {service.shortDescription}
                   </p>
 
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div>
                       <div className="text-sm text-gray-500">от</div>
-                      <div className="text-2xl text-[#1167B1]">
+                      <div className="text-3xl text-[#1167B1]">
                         {service.packages.basic.price.toLocaleString("ru-RU")} ₽
                       </div>
                     </div>
@@ -187,7 +187,7 @@ export default function CatalogPage() {
               <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center">
                 <Search className="w-12 h-12 text-gray-400" />
               </div>
-              <h3 className="text-2xl mb-2">Услуги не найдены</h3>
+              <h3 className="text-3xl md:text-4xl mb-2">Услуги не найдены</h3>
               <p className="text-gray-600">
                 Попробуйте изменить параметры поиска или фильтры
               </p>

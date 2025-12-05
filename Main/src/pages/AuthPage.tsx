@@ -73,7 +73,7 @@ export default function AuthPage() {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1167B1]/10 flex items-center justify-center">
                     <Mail className="w-8 h-8 text-[#1167B1]" />
                   </div>
-                  <h1 className="text-3xl mb-2">Восстановление пароля</h1>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl mb-2">Восстановление пароля</h1>
                   <p className="text-gray-600">
                     Введите email для восстановления доступа
                   </p>
@@ -139,7 +139,7 @@ export default function AuthPage() {
               <TabsContent value="login">
                 <div className="bg-white rounded-2xl p-8 shadow-xl">
                   <div className="text-center mb-8">
-                    <h2 className="text-3xl mb-2">Вход в личный кабинет</h2>
+                    <h2 className="text-3xl md:text-4xl mb-2">Вход в личный кабинет</h2>
                     <p className="text-gray-600">
                       Войдите, чтобы управлять своими заказами
                     </p>
@@ -198,7 +198,7 @@ export default function AuthPage() {
               <TabsContent value="register">
                 <div className="bg-white rounded-2xl p-8 shadow-xl">
                   <div className="text-center mb-8">
-                    <h2 className="text-3xl mb-2">Регистрация</h2>
+                    <h2 className="text-3xl md:text-4xl mb-2">Регистрация</h2>
                     <p className="text-gray-600">
                       Создайте аккаунт для управления заказами
                     </p>

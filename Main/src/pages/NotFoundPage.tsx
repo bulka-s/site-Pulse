@@ -23,7 +23,7 @@ export default function NotFoundPage() {
 
             {/* Message */}
             <div className="mb-12">
-              <h2 className="text-4xl md:text-5xl mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
                 Страница не найдена
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ export default function NotFoundPage() {
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#1167B1]/10 flex items-center justify-center">
                   <Home className="w-6 h-6 text-[#1167B1]" />
                 </div>
-                <h3 className="text-lg mb-2">Главная страница</h3>
+                <h3 className="text-2xl mb-2">Главная страница</h3>
                 <p className="text-sm text-gray-600">
                   Узнайте больше о наших услугах
                 </p>
@@ -69,7 +69,7 @@ export default function NotFoundPage() {
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#1167B1]/10 flex items-center justify-center">
                   <Search className="w-6 h-6 text-[#1167B1]" />
                 </div>
-                <h3 className="text-lg mb-2">Каталог услуг</h3>
+                <h3 className="text-2xl mb-2">Каталог услуг</h3>
                 <p className="text-sm text-gray-600">
                   Полный список наших услуг
                 </p>
@@ -79,7 +79,7 @@ export default function NotFoundPage() {
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#1167B1]/10 flex items-center justify-center">
                   <Mail className="w-6 h-6 text-[#1167B1]" />
                 </div>
-                <h3 className="text-lg mb-2">Контакты</h3>
+                <h3 className="text-2xl mb-2">Контакты</h3>
                 <div className="text-sm text-gray-600 space-y-1">
                   <div>+7 (999) 123-45-67</div>
                   <div>info@pulsemarketing.ru</div>
@@ -89,7 +89,7 @@ export default function NotFoundPage() {
 
             {/* Help Section */}
             <div className="mt-16 bg-gradient-to-r from-[#1167B1] to-blue-600 rounded-2xl p-12 text-white">
-              <h3 className="text-3xl mb-4">
+              <h3 className="text-3xl md:text-4xl mb-4">
                 Нужна помощь?
               </h3>
               <p className="text-xl mb-8 opacity-90">

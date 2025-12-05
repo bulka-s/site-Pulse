@@ -70,7 +70,7 @@ export default function CheckoutPage() {
       <main className="pb-20" style={{ paddingTop: "3rem" }}>
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
               Оформление заказа
             </h1>
             <p className="text-xl text-gray-600">
@@ -82,7 +82,7 @@ export default function CheckoutPage() {
             {/* Form */}
             <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 className="text-2xl mb-6">Данные покупателя</h2>
+                <h2 className="text-3xl md:text-4xl mb-6">Данные покупателя</h2>
 
                 <div className="space-y-6">
                   <div>
@@ -92,7 +92,7 @@ export default function CheckoutPage() {
                       type="text"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      placeholder="Иванов Иван Иванович"
+                      placeholder="ФИО"
                       required
                     />
                   </div>
@@ -105,7 +105,7 @@ export default function CheckoutPage() {
                         type="text"
                         value={formData.position}
                         onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-                        placeholder="Маркетолог"
+                        placeholder="Должность"
                       />
                     </div>
                     <div>
@@ -115,12 +115,12 @@ export default function CheckoutPage() {
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="ООО Пример"
+                        placeholder="Компания"
                       />
                     </div>
                   </div>
 
-                  <h3 className="text-xl pt-4">Контакты</h3>
+                  <h3 className="text-2xl pt-4">Контакты</h3>
 
                   <div>
                     {/* <Label htmlFor="email">Email *</Label> */}
@@ -129,7 +129,7 @@ export default function CheckoutPage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="example@mail.ru"
+                      placeholder="Email"
                       required
                     />
                   </div>
@@ -142,7 +142,7 @@ export default function CheckoutPage() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="Номер"
+                        placeholder="Телефон"
                         required
                       />
                     </div>
@@ -218,7 +218,7 @@ export default function CheckoutPage() {
             {/* Order Summary */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-2xl p-6 shadow-xl sticky top-24">
-                <h2 className="text-2xl mb-6">Ваш заказ</h2>
+                <h2 className="text-3xl md:text-4xl mb-6">Ваш заказ</h2>
 
                 <div className="space-y-4 mb-6 max-h-[400px] overflow-y-auto">
                   {items.map((item) => (

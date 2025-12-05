@@ -35,7 +35,7 @@ export default function CategoryPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl mb-4">Категория не найдена</h2>
+          <h2 className="text-3xl md:text-4xl mb-4">Категория не найдена</h2>
           <Link to="/catalog">
             <Button>Вернуться в каталог</Button>
           </Link>
@@ -64,7 +64,7 @@ export default function CategoryPage() {
             {/* <div className="inline-block px-4 py-2 bg-[#1167B1]/10 text-[#1167B1] rounded-full mb-4">
               {allServices.length} {allServices.length === 1 ? 'услуга' : 'услуг'}
             </div> */}
-            <h1 className="text-5xl md:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-[#1167B1] to-blue-600 bg-clip-text text-transparent font-bold">
               {categoryInfo.name}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl">
@@ -114,7 +114,7 @@ export default function CategoryPage() {
                 </div>
 
                 <div className="p-6 flex flex-col h-full justify-between  ">
-                  <h3 className="text-xl mb-3 group-hover:text-[#1167B1] transition-colors">
+                  <h3 className="text-2xl mb-3 group-hover:text-[#1167B1] transition-colors">
                     {service.name}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">{service.shortDescription}</p>
@@ -126,7 +126,7 @@ export default function CategoryPage() {
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div>
                       <div className="text-sm text-gray-500">от</div>
-                      <div className="text-2xl text-[#1167B1]">
+                      <div className="text-3xl text-[#1167B1]">
                         {service.packages.basic.price.toLocaleString('ru-RU')} ₽
                       </div>
                     </div>
